@@ -32,6 +32,21 @@ ui =int.Parse(Console.ReadLine());
     if (ui == 6)
     {
         Console.WriteLine($"Ati accesat problema {ui}");
+        p6();
+    }
+
+    void p6()
+    {
+        int a, b, c;
+        a = int.Parse(Console.ReadLine());
+        b = int.Parse(Console.ReadLine());
+        c = int.Parse(Console.ReadLine());
+    if (a + b > c && b + c > a && c + a > b)
+    {
+        Console.WriteLine($"Valorile {a}, {b}, {c} pot fi laturi ale unui triunghi");
+    }
+    else
+        Console.WriteLine($"Valorile {a}, {b}, {c} NU pot fi laturile unui triunghi");
     }
 
 void p5()
