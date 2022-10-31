@@ -96,12 +96,26 @@ void p17()
 {
     int n=int.Parse(Console.ReadLine());
     int m = int.Parse(Console.ReadLine());
+    int a = n, b = m;
     while (n != m)
         if (n > m)
             n -= m;
         else
             m -= n;
     Console.WriteLine($"Cel mai mare divizor comun este: {n}");
+    n = a; m = b;
+    while(a != b)
+    {
+        if (a < b)
+        {
+            a = a + n;
+        }
+        if(a > b)
+        {
+            b = b + m;
+        }
+    }
+    Console.WriteLine($"Cel mai mare multiplu comun este:{a}");
 }
 
 void p16()
