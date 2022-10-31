@@ -91,6 +91,130 @@ ui =int.Parse(Console.ReadLine());
         Console.WriteLine($"Ati accesat problema {ui}");
         p17();
     }
+    if (ui == 18)
+    {
+        Console.WriteLine($"Ati accesat problema {ui}");
+        p18();
+    }
+    if (ui == 19)
+    {
+        Console.WriteLine($"Ati accesat problema {ui}");
+        p19();
+    }
+    if (ui == 20)
+    {
+        Console.WriteLine($"Ati accesat problema {ui}");
+        p20();
+    }
+    if (ui == 21)
+    {
+        Console.WriteLine($"Ati accesat problema {ui}");
+        p21();
+    }
+
+void p21()
+{
+    int n=int.Parse(Console.ReadLine());
+    while()
+}
+
+void p20()
+{
+    int m = int.Parse(Console.ReadLine());
+    int n = int.Parse(Console.ReadLine());
+    int parteInt, parteFract;
+    parteInt = m / n; 
+    parteFract = m % n; 
+    Console.Write($"{parteInt},");
+    int cifra, rest;
+    List<int> resturi = new List<int>();
+    List<int> cifre = new List<int>();
+    resturi.Add(parteFract);
+    bool periodic = false;
+    do
+    {
+        cifra = parteFract * 10 / n;
+        cifre.Add(cifra);
+        rest = parteFract * 10 % n;
+        if (!resturi.Contains(rest))
+        {
+            resturi.Add(rest);
+        }
+        else
+        {
+            periodic = true;
+            break;
+        }
+        parteFract = rest;
+    } while (rest != 0);
+
+    if (!periodic)
+    {
+        foreach (var item in cifre)
+        {
+            Console.Write(item);
+        }
+    }
+    else
+    {
+        for (int i = 0; i < resturi.Count; i++)
+        {
+            if (resturi[i] == rest)
+            {
+                Console.Write("(");
+            }
+            Console.Write(cifre[i]);
+        }
+        Console.WriteLine(")");
+    }
+}
+
+void p19()
+{
+    int n=int.Parse(Console.ReadLine());
+    int[] a = new int[10];
+    int nr = 0;
+    while (n > 0)
+    {
+        a[n % 10]++;
+        n /= 10;
+    }
+    for (int i= 0; i <= 9; i++)
+    {
+        if (a[i] != 0)
+        {
+            nr++;
+        }
+    }
+    if (nr == 2)
+    {
+        Console.WriteLine($"Numarul este format din {nr} cifre");
+    }
+    else
+        Console.WriteLine($"Numarul este format din {nr} cifre");
+}
+
+void p18()
+{
+    int n=int.Parse(Console.ReadLine());
+    int d = 2;
+    while (n > 1)
+    {
+        int p = 0;
+        while (n % d == 0)
+        {
+            p++;
+            n /= d;
+        }
+        if (p != 0)
+            Console.WriteLine($"{d}^{p}");
+        d++;
+        if((n>1 && d * d > n))
+        {
+            d = n;
+        }
+    }
+}
 
 void p17()
 {
