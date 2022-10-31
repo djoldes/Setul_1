@@ -115,7 +115,20 @@ ui =int.Parse(Console.ReadLine());
 void p21()
 {
     int n=int.Parse(Console.ReadLine());
-    while()
+    int i = 1;
+    int j = 1024;
+    while (j != n)
+    {
+        Console.WriteLine($"Este {n} mai mare decat {i} si mai mic decat {j / 2}? ");
+            if(n>i && n<j/2)
+        {
+            j = j / 2;
+        }
+        else
+        {
+            i = i++;
+        }
+    }
 }
 
 void p20()
